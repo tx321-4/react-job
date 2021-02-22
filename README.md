@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# React 练习项目 React/mongodb 招聘项目
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 参考链接：[招聘App](https://so.csdn.net/so/search/blog?q=%E3%80%90%E6%8B%9B%E8%81%98App%E3%80%91&t=blog&p=1&s=0&tm=0&lv=-1&ft=0&l=&u=qq_34235864)
+
+
 
 ## Available Scripts
 
