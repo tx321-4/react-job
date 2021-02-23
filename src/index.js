@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import {createStore,applyMiddleware ,compose} from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 
 import Login from './container/login';
 import Register from './container/register';
-
+import AuthRoute from './component/authroute'
+import BossInfo from './container/bossinfo';
+import GeniusInfo from './container/geniusinfo';
 import reducers from './reducer';
 import './index.css';
 
-const store = createStore(reducers,compose(
+const store = createStore(reducers, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 
@@ -21,13 +23,15 @@ const store = createStore(reducers,compose(
 
 ReactDOM.render(
   <Provider store={store}>
-  <BrowserRouter >
-    <div>
-    <Route path='/login' component={Login}></Route>
-  <Route path='/register' component={Register}></Route>
-     
-    </div>
-  </BrowserRouter>
+    <BrowserRouter >
+      <div>
+        <AuthRoute></AuthRoute>
+        <Route path='/login' component={Login}></Route>
+        <Route path='/register' component={Register}></Route>
+        <Route path="/geniusinfo" component={GeniusInfo}></Route>
+        <Route path="/bossinfo" component={BossInfo}></Route>
+      </div>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
