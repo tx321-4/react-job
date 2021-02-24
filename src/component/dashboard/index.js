@@ -18,7 +18,7 @@ class DashBoard extends React.Component {
   render () {
     const { pathname } = this.props.location;
     const user = this.props.user;
-    
+   //console.log(this.props)
     const navList = [
       {
         path: '/boss',

@@ -1,10 +1,18 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {getUserList} from '../../redux/chatuser.redux'
+import UserCard from '../../component/usercard';
 
+@connect(
+  state=> state.chatuser,
+  {getUserList}
+)
 class Boss extends React.Component{
+  componentDidMount(){
+    this.props.getUserList('genius')
+  }
   render(){
-    return (
-      <div>牛人列表</div>
-    )
+    return <UserCard userList={this.props.userlist}></UserCard>
   }
 }
 
