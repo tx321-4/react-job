@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom'
 import {connect} from 'react-redux';
-import { List, InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile';
+import { List, InputItem, WingBlank, WhiteSpace, Button,Modal } from 'antd-mobile';
 
 import Logo from '../../component/logo';
 import {login} from '../../redux/user.redux'
@@ -19,6 +19,7 @@ import jobForm from '../../component/job-form'
   }
   handleLogin = ()=>{
     this.props.login(this.props.state)
+    
   }
   render () {
     return (

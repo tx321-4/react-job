@@ -33,7 +33,7 @@ export function user(state = initState, action){
     default: 
       return state
   }
-  // return state
+   //return state
 }
 
 // action 
@@ -47,7 +47,7 @@ function errorMsg(msg){
 export function loadData(userinfo){
   return {type: LOAD_DATA, payload: userinfo}
 }
-export function logoutSumbit(){
+export function logoutSubmit(){
   return { type: LOGOUT}
 }
 

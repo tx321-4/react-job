@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {loadData} from '../../redux/user.redux'
+
 @withRouter
 @connect(
   null,
@@ -16,14 +17,12 @@ import {loadData} from '../../redux/user.redux'
     if(publicList.indexOf(pathname) > -1) {
       return null;
     }
-    //获取测试信息
+    //获取个人信息
     axios.get('/user/info')
     .then(res =>{
-      console.log(res)
       if(res.status == 200) {
         if(res.data.code ==0){
           this.props.loadData(res.data.data)
-          
         }else{
           this.props.history.push('/login')
         }
