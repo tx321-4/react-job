@@ -9,6 +9,8 @@ import thunk from 'redux-thunk'
 
 import AuthRoute from './component/authroute'
 import DashBoard from './component/dashboard'
+import Chat from './component/chat';
+
 import Login from './container/login';
 import Register from './container/register';
 import BossInfo from './container/bossinfo';
@@ -32,6 +34,7 @@ ReactDOM.render(
         <Route path='/register' component={Register}></Route>
         <Route path="/geniusinfo" component={GeniusInfo}></Route>
         <Route path="/bossinfo" component={BossInfo}></Route>
+        <Route path="/chat/:user" component={Chat}></Route>
         <Route component={DashBoard}></Route>  
         </Switch>
       </div>
