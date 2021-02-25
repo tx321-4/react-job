@@ -11,7 +11,8 @@ const app = express();
 const server = require('http').Server(app); // express server 用http包裹
 const io = require('socket.io')(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", // 本地开发环境 删掉注释  
+ // origin: "http://zp.xxxx.xxx", // 线上环境 删掉注释  
     methods: ["GET", "POST"]
   }
 }); //  再传给socket.io对象，使其与express 关联起来

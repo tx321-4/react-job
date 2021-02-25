@@ -2,6 +2,20 @@
 
 ## 参考链接：[招聘App](https://so.csdn.net/so/search/blog?q=%E3%80%90%E6%8B%9B%E8%81%98App%E3%80%91&t=blog&p=1&s=0&tm=0&lv=-1&ft=0&l=&u=qq_34235864)
 
+#
+### 线上发布
+- 注意  `/src/redux/chat.redux.js`    
+  - const socket =io('ws://localhost:9093');// 本地开发环境 删掉注释  
+  - const socket =io('ws://zp.xxxx.xxx'); // 线上环境 删掉注释
+- 注意  `/server/server.js`
+  - origin: "http://localhost:3000", // 本地开发环境 删掉注释  
+  - origin: "http://zp.xxxx.xxx", // 线上环境 删掉注释   
+
+- `server`文件夹 拷贝到根目录, 安装依赖
+  
+  ```bash
+  yarn add   cookie-parser express mongoose socket.io utility  --save  
+  ```
 
 
 ## Available Scripts

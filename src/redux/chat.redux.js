@@ -1,6 +1,7 @@
 import axios from 'axios'
 import io from 'socket.io-client'
-const socket = io('ws://localhost:9093')
+// const socket =io('ws://localhost:9093');// 本地开发环境 删掉注释
+const socket =io('ws://zp.xxx.xx'); // 线上环境 删掉注释
 
 
 // action type

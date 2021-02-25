@@ -16,6 +16,7 @@ import jobForm from '../../component/job-form'
 
   register =() =>{
     this.props.history.push('/register')
+    
   }
   handleLogin = ()=>{
     this.props.login(this.props.state)
