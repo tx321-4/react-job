@@ -95,15 +95,21 @@ Router.get('/info', function (req, res) {
 // 获取聊天信息列表 1.to user  2. from user
 
 Router.get('/getmsglist', function (req, res) {
-  const user = req.cookies.user;
+  const user = req.cookies.userid;
   // 查询多个条件,用$or区分: '$or': [{from:user, to:user}]
-  Chat.find({}, function (err, doc) {
-    if (err) {
-      return res.json({ code: 1, msg: '后端出错了' })
-    }
-    if (doc) {
-      return res.json({ code: 0, msgs: doc })
-    }
+  User.find({}, function (e,userdoc){
+    let  users = {}
+    userdoc.forEach(v=>{
+      users[v._id] = {name:v.user, avatar:v.avatar}
+    })
+    Chat.find({'$or':[{from:user}, {to:user}]}, function (err, doc) {
+      if (err) {
+        return res.json({ code: 1, msg: '后端出错了' })
+      }
+      if (doc) {
+        return res.json({ code: 0, msgs: doc , users: users})
+      }
+    })
   })
 })
 

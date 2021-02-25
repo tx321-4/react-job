@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .am-tab-bar{
   position: fixed;
   bottom: 0;
@@ -43,3 +42,4 @@ code {
 #chat-page .am-grid-text{
   margin-top: 0;
 }
+

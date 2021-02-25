@@ -1,20 +1,29 @@
 import React from 'react';
 import { NavBar } from 'antd-mobile'
+import { connect } from 'react-redux'
+import { Switch, Route } from 'react-router-dom';
 import NavLinkBar from '../../component/navlink'
 import Boss from '../../component/boss';
 import Genius from '../../component/genius'
 import User from '../../component/user'
 import Msg from '../../component/msg';
-import { connect } from 'react-redux'
 
-import { Switch, Route } from 'react-router-dom';
+
+import {getMsgList, recvMsg} from '../../redux/chat.redux';
 
 @connect(
   state => state,
+  {getMsgList, recvMsg}
 )
 
 class DashBoard extends React.Component {
-
+componentDidMount(){
+  if(!this.props.chat.chatmsg.length){
+    this.props.getMsgList();
+    this.props.recvMsg();
+  }
+  
+}
   render () {
     const { pathname } = this.props.location;
     const user = this.props.user;
