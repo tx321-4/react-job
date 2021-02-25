@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavBar, List, InputItem, Icon,Grid } from 'antd-mobile'
 import { connect } from 'react-redux'
-import { getMsgList, sendMsg, recvMsg } from '../../redux/chat.redux'
+import { getMsgList, sendMsg, recvMsg,readMsg } from '../../redux/chat.redux'
 import { getChatId } from '../../utils'
 //import io from 'socket.io-client'
 // const socket = io('ws://localhost:9093')
 
 @connect(
   state => state,
-  { getMsgList, sendMsg, recvMsg }
+  { getMsgList, sendMsg, recvMsg,readMsg }
 )
 class Chat extends React.Component {
   constructor(props) {
@@ -28,6 +28,12 @@ class Chat extends React.Component {
     //   })
     // })
   }
+
+  componentWillMount(){
+    const to = this.props.match.params.user;
+    this.props.readMsg(to)
+  }
+
   // grid bug官方推荐解决方案： 手动发送一个事件
   fixCarousel() {
     setTimeout(function() {

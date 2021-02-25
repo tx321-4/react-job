@@ -21,7 +21,7 @@ const io = require('socket.io')(server, {
 io.on('connection', function (socket) {
   console.log('user login')
   socket.on('sendmsg', function (data) { //socket 当前连接的请求
-    console.log(data)
+    // console.log(data)
     const { from, to, msg} = data;
     const chatid = [from, to].sort().join('_');
     Chat.create({chatid, from, to, content: msg},function(err,doc){ // 数据库存入数据
