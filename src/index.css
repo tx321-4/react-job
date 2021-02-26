@@ -11,6 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.error-msg{
+  color: #f50;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
 
 .am-tab-bar{
   position: fixed;

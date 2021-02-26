@@ -28,7 +28,7 @@ class Register extends React.Component {
         {this.props.redirectTo ? <Redirect to={this.props.redirectTo} /> : null}
         <Logo />
         <WingBlank>
-
+        {this.props.msg ? <p className='error-msg'>{this.props.msg}</p> : null}
           <InputItem onChange={v => this.props.handleChange('user', v)}>用户名</InputItem>
 
           <InputItem onChange={v => this.props.handleChange('pwd', v)}>密码</InputItem>
