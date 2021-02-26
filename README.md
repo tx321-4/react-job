@@ -1,9 +1,47 @@
-# React 练习项目 React/mongodb 招聘项目
+# react 全栈项目 招聘APP 实时在线聊天室
 
-## 参考链接：[招聘App](https://so.csdn.net/so/search/blog?q=%E3%80%90%E6%8B%9B%E8%81%98App%E3%80%91&t=blog&p=1&s=0&tm=0&lv=-1&ft=0&l=&u=qq_34235864)
+## 原文转载：[招聘APP](https://so.csdn.net/so/search/blog?q=%E3%80%90%E6%8B%9B%E8%81%98App%E3%80%91&t=blog&p=1&s=0&tm=0&lv=-1&ft=0&l=&u=qq_34235864)
+
+## 线上: [招聘APP 在线聊天室](http:zp.liumianti.top) 
+
+* 牛人账户：  
+ { name：小明, pwd：1234 }
+* Boss账户：  
+ { name：百度, pwd：1234 }
+
+
+## 环境 
+
+- "react": "^17.0.1",
+- "redux": "^4.0.5",
+- "react-router-dom": "^5.2.0",
+- "express": "^4.17.1",
+- "mongoose": "5.11.15",
+- "socket.io": "^3.1.1",
+- "socket.io-client": "^3.1.1",
+
+
+## 介绍：
+
+招聘APP 实时聊天室 ，react框架开发，引入`Socket.io` 库来实时聊天， 支持注册登录， 显示未读消息个数，不同账户对应不同用户列表；  
+项目模块组成：
+1. 注册，登陆
+2. 个人信息完善
+3. 个人页面
+4. Boss列表,牛人列表
+5. 消息列表页面
+6. 聊天室页面
+
+## 技术亮点
+1. 以 create-react-app 快速配置 react 项目环境，搭配 antd-mobile UI框架 构建前端项目;
+2. 以express.js基于Node.js开发 后端项目，数据库采用mongodb来实现
+3. 使用 `Socket.io` 配合 express，快速开发实时应用
+4. redux 保存用户信息，聊天消息，页面之间相互调用数据，统一管理
+5. 使用pm2 管理部署线上项目
 
 #
-### 线上发布
+
+### 线上发布注意事项
 - 注意  `/src/redux/chat.redux.js`    
   - const socket =io('ws://localhost:9093');// 本地开发环境 删掉注释  
   - const socket =io('ws://zp.xxxx.xxx'); // 线上环境 删掉注释
@@ -18,69 +56,3 @@
   ```
 
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
